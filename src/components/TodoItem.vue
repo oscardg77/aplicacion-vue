@@ -2,7 +2,7 @@
   <div class="todo" v-bind:class="{completed: todo.completed}">>
     <div class="todo-body">
         <input type="checkbox" 
-        v-bind:checked="todo.completed? 'checked': ' '"
+        v-bind:checked="todo.completed? 'checked': ''"
         v-on:changes="checkTodo">
         {{todo.title}}
     </div>
@@ -12,13 +12,13 @@
   </div>
 </template>
 
- <<script>
+ <script>
  export default {
      name: 'TodoItem',
      props: ['todo'],
      methods: {
          checkTodo(){
-             this.todo.completed = this.todo.completed;
+             this.todo.completed = !this.todo.completed;
          }
      }
  }
